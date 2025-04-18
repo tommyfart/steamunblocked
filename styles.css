@@ -1,0 +1,220 @@
+:root {
+  --steam-bg: #1b2838;
+  --steam-bg-dark: #171a21;
+  --steam-header: #c7d5e0;
+  --steam-text: #66c0f4;
+  --steam-hover: #1f4c6a;
+  --steam-button: #2a475e;
+  --steam-button-hover: #66c0f4;
+}
+
+body {
+  background: var(--steam-bg);
+  color: var(--steam-header);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.steam-header {
+  background: var(--steam-bg-dark);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.steam-logo {
+  display: flex;
+  align-items: center;
+  color: var(--steam-header);
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-right: 40px;
+}
+
+.steam-logo svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  filter: brightness(1.1);
+}
+
+.steam-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.steam-nav a {
+  color: var(--steam-header);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.steam-nav a:hover,
+.steam-nav a.active {
+  color: var(--steam-text);
+}
+
+.store-nav {
+  background: linear-gradient(90deg, var(--steam-bg-dark) 0%, var(--steam-bg) 100%);
+  padding: 5px 0;
+}
+
+.store-nav-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.store-nav a {
+  color: #969696;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+.store-nav a:hover,
+.store-nav a.active {
+  color: var(--steam-text);
+}
+
+#steam-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 40px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.game {
+  background: var(--steam-bg-dark);
+  border-radius: 3px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.game:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.game img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 460/215;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+.game:hover img {
+  filter: brightness(110%);
+}
+
+.game h3 {
+  margin: 0;
+  padding: 12px;
+  color: var(--steam-header);
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(0,0,0,0.3);
+}
+
+#play-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.menu-content {
+  background: var(--steam-bg-dark);
+  padding: 30px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 400px;
+  border: 1px solid var(--steam-button);
+}
+
+.menu-content h2 {
+  color: var(--steam-header);
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.menu-content button {
+  margin: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 2px;
+  background: var(--steam-button);
+  color: var(--steam-text);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.menu-content button:hover {
+  background: var(--steam-hover);
+  color: white;
+}
+
+#game-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 200;
+}
+
+#game-frame {
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+#close-game {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 16px;
+  background: var(--steam-button);
+  color: var(--steam-text);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+#close-game:hover {
+  background: var(--steam-hover);
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
